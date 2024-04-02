@@ -1,0 +1,438 @@
+:root {
+  --height-navbar: 70px
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+html {
+  background-color: #606060;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #606060;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.postList .post:first-child{
+  margin-top: calc( var(--height-navbar) + 50px);
+}
+.post {
+  width: 1000px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+
+.post:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.post .title {
+  flex: 20%;
+  border-bottom: 1px solid lightgray;
+  background-color: #404040;
+  display: grid;
+  place-content: center;
+  color: #f6f6f8;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.post .body {
+  flex: 60%;
+  display: grid;
+  place-content: center;
+  background-color: #909090;
+}
+.postText {
+  margin: 10px;
+  text-align: center;
+  color: #fff
+}
+
+.post .footer {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background-color: #404040;
+  color: #f6f6f8;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.footer .username {
+  flex: 50%;
+}
+.footer .a {
+  text-decoration: none;
+  color: #f6f6f8;
+}
+.footer .buttons {
+  flex: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.likeBttn {
+  color: rgba(250, 250, 250, 0.8);
+}
+.unlikeBttn {
+  color: #f6f6f8;
+}
+
+.buttons label {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+/* CREATE POST PAGE CSS */
+
+.wrapper {
+  margin-top: 10%;
+}
+
+.createPostPage {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  top: 30%;
+}
+
+.formContainer #inputCreatePost {
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  margin: 15px -10px;
+  border: 1px solid #111;
+}
+
+.formContainer button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  background-color: #404040;
+  border-radius: 5px;
+  color: #f6f6f8;
+}
+
+.formContainer button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+span {
+  color: rgb(145, 0, 0);
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: #404040;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navbar .links {
+  flex: 50%;
+  margin-right: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .loggedInContainer {
+  flex: 50%;
+  height: 100%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #f6f6f8;
+}
+
+.navbar button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #f6f6f8;
+}
+
+.navbar h1 {
+  text-align: right;
+  margin-right: 10px;
+  color: #f6f6f8;
+  font-weight: lighter;
+}
+
+/* INDIVIDUAL POST */
+.postPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+.leftSide .title {
+  width: 100%;
+  background-color: #404040;
+  
+}
+.leftSide .title p {
+  margin: 0 5px;
+}
+.leftSide  .body {
+  margin: 0 10px;
+  background-color: #606060;
+  color: white;
+}
+.rightSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSide .addCommentContainer {
+  flex: 20%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: calc(var(--height-navbar) + 40px);
+}
+
+.addCommentContainer input,
+button {
+  width: 400px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: #909090;
+
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #111; /* Màu chữ cho placeholder */
+  text-indent: 5px
+}
+
+
+.addCommentContainer button {
+  background-color: #404040;
+  color: #f6f6f8;
+}
+.btnAddComment {
+  cursor: pointer;
+}
+.addCommentContainer input {
+  border: 2px solid #404040;
+}
+
+.rightSide .listOfComments {
+  flex: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listOfComments .comment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  height: auto;
+  padding: 0px 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.listOfComments .comment .username_comment {
+  margin: 10px;
+  color: white;
+}
+.listOfComments .comment .text_comment {
+  margin: 10px;
+  color: white;
+
+}
+
+.listOfComments .comment .delete_btn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: transparent;
+  height: 26px;
+  width: 26px;
+  cursor: pointer;
+  background-color: #ebe8e8;
+  border-radius: 50%;
+}
+.listOfComments .comment .delete_btn:hover {
+  opacity: 0.5 ;
+
+}
+
+#individual {
+  height: 500px;
+  width: 600px;
+}
+
+#individual .title,
+#individual .footer {
+  font-size: 30px;
+}
+
+#individual .body {
+  font-size: 25px;
+}
+
+/* LOGIN */
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  top: 30%;
+  border-radius: 10px;
+  position: absolute;
+  width: 400px;
+}
+
+.loginContainer input {
+  display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px -10px;
+}
+
+.loginContainer button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 80px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+}
+.loginContainer button:hover {
+  opacity:0.9 ;
+}
+
+.loginContainer input {
+  border: 2px solid #404040;
+}
+
+/* PROFILE */
+.prodilePageContainer {
+  margin-top: calc(var( --height-navbar) + 40px);
+}
+
+
+/* CHANGE PASSWORD */
+
+
+.changePassword {
+  margin-top: calc(var( --height-navbar) + 40px) ;
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  width: 400px;
+}
+
+.changePassword h1 {
+  margin-bottom: 20px;
+}
+
+
+.wrap_changePassword {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_changePassword {
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 1px solid #111;
+  padding: 10px 10px;
+  margin: 15px 0px;
+}
+
+.btn_changePassword {
+  width: 100%;
+  margin: 10px 0;
+}
